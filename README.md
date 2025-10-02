@@ -13,7 +13,7 @@ Rule: **one weird thing per day, built in ~30 minutes.**
 **Day 01 — Transparency**  
 I wake up in a world of nothing. Everything feels thin — almost invisible.  
 There’s only one faint textbox ahead of me. If I click it, maybe something will reveal itself.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/01-transparency/)_
 
 ---
 
