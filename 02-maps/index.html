@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weird Web October - Maps</title>
+    <meta
+      name="description"
+      content="Captain’s Log, Day 2 — The textbox dissolves, replaced by a crude pixel map. One square flickers, holding coordinates to an impossible place."
+    />
+    <meta name="author" content="Marcus Lane" />
+    <link rel="stylesheet" href="../css/normalize.min.css" />
+    <link rel="stylesheet" href="../css/base.min.css" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird-weboctober.vercel.app/02-maps/"
+    />
+    <link rel="octo:octothorpes" href="Maps" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Weird Web October" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <style>
+      body {
+        align-items: center;
+        background: #111;
+        color: #fff;
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+      }
+
+      :root {
+        font-family: monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+      }
+
+      .clue {
+        animation: clue 2s forwards;
+        color: #fff;
+        font-size: 1.5rem;
+        opacity: 0;
+        text-align: center;
+      }
+
+      .forest {
+        background: #4a7a3c;
+      }
+
+      .land {
+        background: #88c070;
+      }
+
+      .map {
+        display: grid;
+        grid-template-columns: repeat(20, 12px);
+        grid-template-rows: repeat(20, 12px);
+        gap: 0;
+      }
+
+      .map.fadeout .pixel {
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      .mountain {
+        background: #a6a6a6;
+      }
+
+      .pixel {
+        width: 12px;
+        height: 12px;
+      }
+
+      .pixel.special {
+        animation: flicker 2s infinite;
+      }
+
+      .shallow {
+        background: #4f9ac5;
+      }
+
+      .water {
+        background: #3a6ea5;
+      }
+
+      @keyframes clue {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes flicker {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.8;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="map" class="map"></div>
+    </main>
+    <script>
+      const map = document.getElementById('map')
+      const terrain = ['water', 'shallow', 'land', 'forest', 'mountain']
+
+      for (let i = 0; i < 400; i++) {
+        const div = document.createElement('div')
+        div.className =
+          'pixel ' + terrain[Math.floor(Math.random() * terrain.length)]
+        map.appendChild(div)
+      }
+
+      const pixels = document.querySelectorAll('.pixel')
+      const specialPixel = pixels[Math.floor(Math.random() * pixels.length)]
+      specialPixel.classList.add('special')
+
+      specialPixel.addEventListener('click', () => {
+        map.classList.add('fadeout')
+        setTimeout(() => {
+          map.outerHTML = "<div class='clue'>12.4634° N<br />53.8237° E</div>"
+        }, 1000)
+      })
+    </script>
+  </body>
+</html>

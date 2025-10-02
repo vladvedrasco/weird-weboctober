@@ -20,7 +20,7 @@ _[Link](https://weird-weboctober.vercel.app/01-transparency/)_
 **Day 02 — Maps**  
 The textbox dissolves, replaced by a crude map drawn in shifting pixels.  
 It doesn’t stay still — every refresh shows a new path. Is this place trying to lead me somewhere?  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/02-maps/)_
 
 ---
 
@@ -225,3 +225,10 @@ On the final night, the air grows cold.
 Flickers in the corner of my vision reveal pale shapes watching me.  
 October ends, but the world stays haunted.  
 _(Link unlocks when built)_
+
+---
+
+## Inspiration
+
+This project is part of **Weird Web October**, a month-long creative coding challenge.  
+Orchestrated by [Weird Web October](https://weirdweboctober.website/).
