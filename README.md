@@ -27,7 +27,7 @@ _[Link](https://weird-weboctober.vercel.app/02-maps/)_
 **Day 03 — Scramble**  
 The map shatters into fragments. Words fall out of order, reassembling themselves differently each time I look.  
 It’s hard to know what’s true here. Or if truth even matters.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/03-scramble/)_
 
 ---
 

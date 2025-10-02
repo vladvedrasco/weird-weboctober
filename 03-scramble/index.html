@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weird Web October - Scramble</title>
+    <meta
+      name="description"
+      content="Captain’s Log, Day 3 — The map shatters into fragments. Letters scramble and reform, never the same twice. If I click when the chaos aligns, perhaps the word will hold."
+    />
+    <meta name="author" content="Marcus Lane" />
+    <link rel="stylesheet" href="../css/normalize.min.css" />
+    <link rel="stylesheet" href="../css/base.min.css" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird-weboctober.vercel.app/03-scramble/"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <link rel="octo:octothorpes" href="Scramble" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Weird Web October" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <style>
+      body {
+        align-items: center;
+        background: #111;
+        color: #f0f0f0;
+        font-size: clamp(1.2rem, 4vw, 2rem);
+        display: flex;
+        min-height: 100vh;
+        letter-spacing: 0.2rem;
+        justify-content: center;
+      }
+
+      :root {
+        font-family: monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+      }
+
+      .clue {
+        animation: clue 2s forwards;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+        text-align: center;
+      }
+
+      .scramble {
+        letter-spacing: 0.2rem;
+        cursor: pointer;
+        transition: opacity 0.8s ease;
+      }
+
+      .scramble.fadeout {
+        opacity: 0;
+      }
+
+      @keyframes clue {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="scramble" class="scramble"></div>
+    </main>
+    <script>
+      const scramble = document.getElementById('scramble')
+      const word = 'TRUTH'
+
+      function shuffle(string) {
+        const array = string.split('')
+
+        for (let index = array.length - 1; index > 0; index--) {
+          const randomIndex = Math.floor(Math.random() * (index + 1))
+          ;[array[index], array[randomIndex]] = [
+            array[randomIndex],
+            array[index],
+          ]
+        }
+
+        return array.join('')
+      }
+
+      const interval = setInterval(() => {
+        scramble.textContent = Math.random() < 0.2 ? word : shuffle(word)
+      }, 700)
+
+      scramble.addEventListener('click', () => {
+        if (scramble.textContent === word) {
+          clearInterval(interval)
+          scramble.classList.add('fadeout')
+          setTimeout(() => {
+            scramble.outerHTML = `<div class="clue">SIGNAL</div>`
+          }, 800)
+        }
+      })
+    </script>
+  </body>
+</html>
