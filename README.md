@@ -34,7 +34,7 @@ _[Link](https://weird-weboctober.vercel.app/03-scramble/)_
 **Day 04 — Filters**  
 Suddenly, colors warp. My vision slides between shadows and neon, like someone is toggling filters on reality.  
 The world doesn’t change — only the way I see it does.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/04-filters/)_
 
 ---
 
