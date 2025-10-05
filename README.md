@@ -48,7 +48,7 @@ _[Link](https://weird-weboctober.vercel.app/05-remix/)_
 **Day 06 — Solids**  
 I stumble into a wall of solid blocks — unmovable, unchanging.  
 For once, something in this world feels stable. Maybe too stable.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/06-solids/)_
 
 ---
 
