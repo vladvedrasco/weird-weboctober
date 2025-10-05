@@ -41,7 +41,7 @@ _[Link](https://weird-weboctober.vercel.app/04-filters/)_
 **Day 05 — Remix**  
 The landscape keeps rearranging itself. Blocks shuffle, pathways remix, nothing stays put.  
 It feels playful, but also… hostile.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/05-remix/)_
 
 ---
 
