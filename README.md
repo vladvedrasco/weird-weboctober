@@ -55,7 +55,7 @@ _[Link](https://weird-weboctober.vercel.app/06-solids/)_
 **Day 07 — Sub-optimal**  
 Every step forward takes three steps back. Levers, switches, buttons — all to open one door.  
 Why is everything here built the hardest way possible?  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/07-sub-optimal/)_
 
 ---
 

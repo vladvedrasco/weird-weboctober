@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weird Web October – Sub-optimal</title>
+    <meta
+      name="description"
+      content="Captain’s Log, Day 7 — Systems build in circles. One switch refuses to behave. The artifact that remains is stubborn, broken: THE."
+    />
+    <meta name="author" content="Marcus Lane" />
+    <link rel="stylesheet" href="../css/normalize.min.css" />
+    <link rel="stylesheet" href="../css/base.min.css" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird-weboctober.vercel.app/07-sub-optimal/"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <link rel="octo:octothorpes" href="Sub-optimal" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Weird Web October" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <style>
+      :root {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      body {
+        align-items: center;
+        background: #0b0b0d;
+        color: #fff;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .clue {
+        animation: fadein 1s forwards;
+        font-size: 1.5rem;
+        opacity: 0;
+        text-align: center;
+      }
+
+      .sub-optimal {
+        display: grid;
+        grid-gap: 18px;
+        grid-template-columns: repeat(4, 80px);
+      }
+
+      .sub-optimal.fadeout .switch {
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      .switch {
+        background: #222;
+        border-radius: 20px;
+        cursor: pointer;
+        height: 30px;
+        position: relative;
+        transition: background 0.25s ease;
+        width: 60px;
+      }
+
+      .switch.faulty {
+        animation: flicker 3s infinite steps(1);
+      }
+
+      .switch.on {
+        background: #07f;
+      }
+
+      .switch.on::before {
+        background: #fff;
+        transform: translateX(28px);
+      }
+
+      .switch::before {
+        background: #666;
+        border-radius: 50%;
+        content: '';
+        height: 24px;
+        left: 4px;
+        position: absolute;
+        top: 3px;
+        transition: transform 0.25s ease, background 0.25s ease;
+        width: 24px;
+      }
+
+      @keyframes fadein {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes flicker {
+        0%,
+        90%,
+        100% {
+          filter: none;
+        }
+        91%,
+        95% {
+          filter: brightness(1.8);
+        }
+        96%,
+        99% {
+          filter: brightness(0.5);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="sub-optimal" class="sub-optimal"></div>
+    </main>
+    <script>
+      const subOptimal = document.getElementById('sub-optimal')
+      const total = 8
+      const levers = []
+
+      for (let index = 0; index < total; index++) {
+        const lever = document.createElement('div')
+        lever.className = 'switch'
+        subOptimal.appendChild(lever)
+        levers.push(lever)
+      }
+
+      const faulty = levers[Math.floor(Math.random() * levers.length)]
+      faulty.classList.add('faulty')
+      levers.forEach(lever => {
+        lever.addEventListener('click', () => {
+          if (lever.classList.contains('faulty')) {
+            if (lever.classList.toggle('on')) {
+              subOptimal.classList.add('fadeout')
+              setTimeout(() => {
+                subOptimal.outerHTML = "<div class='clue'>THE</div>"
+              }, 1000)
+            }
+          } else {
+            lever.classList.toggle('on')
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
