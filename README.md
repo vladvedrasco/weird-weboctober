@@ -62,7 +62,7 @@ _[Link](https://weird-weboctober.vercel.app/07-sub-optimal/)_
 **Day 08 — Containers**  
 I find a box. Inside it, another box. And inside that… more boxes.  
 Each one smaller, but each one heavier. Endless nesting.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/08-containers/)_
 
 ---
 
