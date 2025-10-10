@@ -90,7 +90,7 @@ _[Link](https://weird-weboctober.vercel.app/11-camera/)_
 **Day 12 — Battle**  
 Two shadows collide, swords clashing in endless sparks.  
 They fight for nothing but the right to exist.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/12-battle/)_
 
 ---
 
