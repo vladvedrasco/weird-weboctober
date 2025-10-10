@@ -83,7 +83,7 @@ _[Link](https://weird-weboctober.vercel.app/10-warning/)_
 **Day 11 — Camera**  
 A lens opens above me. I feel watched.  
 The world pixelates, like I’m trapped inside someone’s grainy feed.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/11-camera/)_
 
 ---
 
