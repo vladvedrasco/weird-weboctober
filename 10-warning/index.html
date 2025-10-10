@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weird Web October – Warning</title>
+    <meta
+      name="description"
+      content="Captain’s Log, Day 10 — Sirens echo through the void. A red light cuts across the dark. The world holds one command: STOP."
+    />
+    <meta name="author" content="Marcus Lane" />
+    <link rel="stylesheet" href="../css/normalize.min.css" />
+    <link rel="stylesheet" href="../css/base.min.css" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird-weboctober.vercel.app/10-warning/"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <link rel="octo:octothorpes" href="Warning" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Weird Web October" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <style>
+      :root {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      body {
+        align-items: center;
+        background: #090909;
+        color: #fff;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .clue {
+        animation: fadein 1s forwards;
+        font-size: 1.5rem;
+        opacity: 0;
+        text-align: center;
+      }
+
+      .fadeout .warning {
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      .warning {
+        animation: rotate 20s linear infinite;
+        height: 0;
+        position: relative;
+        transform: translateX(-50%);
+        width: 0;
+      }
+
+      .warning.blink::before {
+        border-bottom-color: #ff0000;
+      }
+
+      .warning::before {
+        border-bottom: 44px solid #dddddd;
+        border-left: 28px solid transparent;
+        border-right: 28px solid transparent;
+        content: '';
+        height: 0;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: border-bottom-color 1s ease;
+        transform: translateX(-50%);
+        width: 0;
+      }
+
+      .warning::after {
+        content: '';
+        position: absolute;
+        border-bottom: 40px solid #090909;
+        border-left: 24px solid transparent;
+        border-right: 24px solid transparent;
+        height: 0;
+        left: 0;
+        top: 2px;
+        transform: translateX(-50%);
+        width: 0;
+      }
+
+      @keyframes fadein {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="warning" class="warning"></div>
+    </main>
+    <script>
+      const warning = document.getElementById('warning')
+
+      function blink() {
+        warning.classList.add('blink')
+        setTimeout(() => {
+          warning.classList.remove('blink')
+          setTimeout(blink, 2000)
+        }, 2000)
+      }
+
+      warning.addEventListener('click', () => {
+        if (!warning.classList.contains('blink')) return
+
+        warning.parentElement.classList.add('fadeout')
+        setTimeout(() => {
+          warning.outerHTML = "<div class='clue'>STOP</div>"
+        }, 1000)
+      })
+
+      setTimeout(blink, 3000)
+    </script>
+  </body>
+</html>
