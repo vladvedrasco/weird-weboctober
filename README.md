@@ -69,7 +69,7 @@ _[Link](https://weird-weboctober.vercel.app/08-containers/)_
 **Day 09 — Blink**  
 The horizon flickers. For a moment, the whole world disappears, then returns.  
 If I blink at the wrong time, will it vanish for good?  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/09-blink/)_
 
 ---
 
