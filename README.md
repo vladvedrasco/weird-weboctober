@@ -76,7 +76,7 @@ _[Link](https://weird-weboctober.vercel.app/09-blink/)_
 **Day 10 — Warning**  
 Sirens echo through the void. A bright triangle pulses in front of me, repeating the same word: **STOP**.  
 But it doesn’t say what I should stop.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/10-warning/)_
 
 ---
 
