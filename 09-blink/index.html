@@ -11,6 +11,25 @@
     <meta name="author" content="Marcus Lane" />
     <link rel="stylesheet" href="../css/normalize.min.css" />
     <link rel="stylesheet" href="../css/base.min.css" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird-weboctober.vercel.app/08-containers/"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <link rel="octo:octothorpes" href="Blink" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Weird Web October" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
     <style>
       :root {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -18,13 +37,24 @@
       }
 
       body {
-        display: flex;
         align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background: radial-gradient(circle at 50% 50%, #000, #030303);
+        background: radial-gradient(circle at 50% 50%, #090909, #000);
         color: #fff;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
         overflow: hidden;
+      }
+
+      .blink {
+        animation: pulse 4s linear infinite;
+        background: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 180px;
+        opacity: 0.02;
+        transition: opacity 0.2s ease;
+        width: 180px;
       }
 
       .clue {
@@ -34,36 +64,21 @@
         text-align: center;
       }
 
-      .blink {
-        position: relative;
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        background: #fff;
-        opacity: 0.08;
-        animation: pulse 3s infinite;
-        cursor: pointer;
-        transition: opacity 0.2s ease;
-      }
-
-      .blink.flash {
-        opacity: 1;
-      }
-
       .fadeout .blink {
         opacity: 0;
         transition: opacity 1s ease;
       }
 
       @keyframes pulse {
-        0%,
-        100% {
-          opacity: 0.08;
-          transform: scale(1);
+        0% {
+          opacity: 0.02;
         }
-        50% {
+        85%,
+        95% {
           opacity: 0.25;
-          transform: scale(0.96);
+        }
+        100% {
+          opacity: 0.02;
         }
       }
 
@@ -80,26 +95,29 @@
     </main>
     <script>
       const blink = document.getElementById('blink')
+      console.log(blink)
 
-      // create periodic flashes (the anomaly)
-      function cueFlash() {
+      function flash() {
+        console.log('flash')
         blink.classList.add('flash')
         setTimeout(() => {
           blink.classList.remove('flash')
-          setTimeout(cueFlash, 1000)
-        }, 1000)
+          setTimeout(flash, 2000)
+        }, 2000)
       }
 
       blink.addEventListener('click', () => {
+        console.log('click')
+
         if (!blink.classList.contains('flash')) return
 
         blink.parentElement.classList.add('fadeout')
         setTimeout(() => {
-          blink.parentElement.outerHTML = "<div class='clue'>BLINK</div>"
+          blink.outerHTML = "<div class='clue'>BLINK</div>"
         }, 1000)
       })
 
-      setTimeout(cueFlash, 3000)
+      setTimeout(flash, 3000)
     </script>
   </body>
 </html>
