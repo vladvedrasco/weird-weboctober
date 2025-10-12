@@ -118,7 +118,7 @@ _[Link](https://weird-weboctober.vercel.app/15-unicode/)_
 **Day 16 — Transition**  
 The world melts between states.  
 Every shift takes too long, stretching time into strange shapes.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/16-transition/)_
 
 ---
 
