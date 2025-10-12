@@ -111,7 +111,7 @@ _[Link](https://weird-weboctober.vercel.app/14-doubles/)_
 **Day 15 — Unicode**  
 Symbols flood the air — arrows, stars, characters I don’t recognize.  
 They hum like they’re alive.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/15-unicode/)_
 
 ---
 
