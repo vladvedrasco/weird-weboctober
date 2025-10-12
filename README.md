@@ -132,7 +132,7 @@ _[Link](https://weird-weboctober.vercel.app/17-illumination/)_
 **Day 18 — Trading**  
 A figure appears, offering me a trade.  
 But what it gives and what it takes never seem equal.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/18-trading/)_
 
 ---
 
