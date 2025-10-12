@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weird Web October – Unicode</title>
+    <meta
+      name="description"
+      content="Captain’s Log, Day 15 — Symbols flood the air, alive with static. One survives the distortion: SYMBOL."
+    />
+    <meta name="author" content="Marcus Lane" />
+    <link rel="stylesheet" href="../css/normalize.min.css" />
+    <link rel="stylesheet" href="../css/base.min.css" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird-weboctober.vercel.app/15-unicode/"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <link rel="octo:octothorpes" href="Unicode" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Weird Web October" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <style>
+      :root {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      body {
+        align-items: center;
+        background: #0a0a0a;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .character {
+        opacity: 0.2;
+        text-align: center;
+        transition: opacity 0.1s ease;
+      }
+
+      .character.flash {
+        opacity: 1;
+      }
+
+      .clue {
+        animation: fadein 1s forwards;
+        font-size: 1.5rem;
+        opacity: 0;
+        text-align: center;
+      }
+
+      .unicode {
+        cursor: pointer;
+        display: grid;
+        font-size: 1.25rem;
+        grid-gap: 4px;
+        grid-template-columns: repeat(10, 1fr);
+      }
+
+      .unicode.fadeout .character {
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      @keyframes fadein {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="unicode" class="unicode"></div>
+    </main>
+    <script>
+      const characters = []
+      let flashingCharacter = null
+      const symbols = ['Δ', 'Ω', 'Ж', 'λ', '★', '∞', '⊗', '⟁', '⍟', '☯']
+      const unocide = document.getElementById('unicode')
+
+      for (let i = 0; i < 100; i++) {
+        const span = document.createElement('span')
+        span.className = 'character'
+        span.textContent = symbols[Math.floor(Math.random() * symbols.length)]
+        unocide.appendChild(span)
+        characters.push(span)
+      }
+
+      function flash() {
+        if (flashingCharacter) flashingCharacter.classList.remove('flash')
+
+        flashingCharacter =
+          characters[Math.floor(Math.random() * characters.length)]
+        flashingCharacter.classList.add('flash')
+
+        setTimeout(() => {
+          flashingCharacter.classList.remove('flash')
+          flashingCharacter = null
+          const next = 4000 + Math.random() * 3000
+          setTimeout(flash, next)
+        }, 1000)
+      }
+
+      unocide.addEventListener('click', event => {
+        if (event.target.classList.contains('flash')) {
+          unocide.classList.add('fadeout')
+          setTimeout(() => {
+            unocide.outerHTML = "<div class='clue'>SYMBOL</div>"
+          }, 1000)
+        }
+      })
+
+      setTimeout(flash, 2000)
+    </script>
+  </body>
+</html>
