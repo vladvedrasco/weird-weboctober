@@ -125,7 +125,7 @@ _[Link](https://weird-weboctober.vercel.app/16-transition/)_
 **Day 17 — Illumination**  
 Darkness swallows everything except a circle of light around me.  
 The more I move, the more shadows scatter.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/17-illumination/)_
 
 ---
 
