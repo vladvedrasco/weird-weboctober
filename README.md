@@ -97,7 +97,7 @@ _[Link](https://weird-weboctober.vercel.app/12-battle/)_
 **Day 13 — Upside-down**  
 Gravity flips. The ground becomes the ceiling.  
 I stumble, unsure which way is up anymore.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/13-upside-down/)_
 
 ---
 
