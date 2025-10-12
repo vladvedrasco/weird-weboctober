@@ -160,7 +160,7 @@ _[Link](https://weird-weboctober.vercel.app/21-language/)_
 **Day 22 - Memory**  
 Cards lie face down, waiting to be flipped.  
 Each one reveals fragments of a memory I don’t fully own.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/22-memory/)_
 
 ---
 

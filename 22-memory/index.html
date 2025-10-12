@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weird Web October – Memory</title>
+    <meta
+      name="description"
+      content="Captain’s Log, Day 22 — Memory fractures. Pieces resurface, out of order and out of time. One fragment still fits: FRAGMENT."
+    />
+    <meta name="author" content="Marcus Lane" />
+    <link rel="stylesheet" href="../css/normalize.min.css" />
+    <link rel="stylesheet" href="../css/base.min.css" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird-weboctober.vercel.app/22-memory/"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <link rel="octo:octothorpes" href="Memory" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Weird Web October" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <style>
+      :root {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      body {
+        align-items: center;
+        background: #050505;
+        color: #fff;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      main {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .memory {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: repeat(4, 80px);
+        grid-template-rows: repeat(4, 80px);
+      }
+
+      .card {
+        background: #1a1a1a;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease;
+      }
+
+      .card.flipped {
+        transform: rotateY(180deg);
+      }
+
+      .card .back {
+        background: #222;
+        transform: rotateY(180deg);
+      }
+
+      .card .back,
+      .card .front {
+        align-items: center;
+        backface-visibility: hidden;
+        border-radius: 4px;
+        display: flex;
+        font-size: 1rem;
+        inset: 0;
+        justify-content: center;
+        position: absolute;
+      }
+
+      .card .front {
+        background: #1a1a1a;
+      }
+
+      .card.special .back {
+        background: #0ff2;
+        border: 1px solid #0ff;
+      }
+
+      .clue {
+        animation: fadein 1s forwards;
+        font-size: 1.5rem;
+        opacity: 0;
+        text-align: center;
+      }
+
+      .fadeout .memory {
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      @keyframes fadein {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="memory" class="memory"></div>
+    </main>
+    <script>
+      const memory = document.getElementById('memory')
+      const total = 16
+      let revealed = false
+
+      for (let index = 0; index < total; index++) {
+        const card = document.createElement('div')
+        card.className = 'card'
+        const front = document.createElement('div')
+        front.className = 'front'
+        front.textContent = ''
+        const back = document.createElement('div')
+        back.className = 'back'
+        back.textContent = '—'
+        card.appendChild(front)
+        card.appendChild(back)
+        memory.appendChild(card)
+      }
+
+      const cards = document.querySelectorAll('.card')
+      const specialCard = cards[Math.floor(Math.random() * cards.length)]
+      specialCard.classList.add('special')
+      specialCard.querySelector('.back').textContent = '⋯'
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          if (revealed || card.classList.contains('flipped')) return
+
+          card.classList.add('flipped')
+
+          if (card.classList.contains('special')) {
+            revealed = true
+            memory.classList.add('fadeout')
+            setTimeout(() => {
+              memory.outerHTML = "<div class='clue'>FRAGMENT</div>"
+            }, 1000)
+          } else {
+            setTimeout(() => card.classList.remove('flipped'), 1000)
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
