@@ -104,7 +104,7 @@ _[Link](https://weird-weboctober.vercel.app/13-upside-down/)_
 **Day 14 — Doubles**  
 I see everything twice. Each tree, each block, each thought.  
 But one reflection lags just behind the other.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/14-doubles/)_
 
 ---
 
