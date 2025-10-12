@@ -139,7 +139,7 @@ _[Link](https://weird-weboctober.vercel.app/18-trading/)_
 **Day 19 — Bounce**  
 Letters ricochet off invisible walls.  
 The world feels like a screensaver that forgot how to rest.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/19-bounce/)_
 
 ---
 
