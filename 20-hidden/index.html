@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weird Web October – Hidden</title>
+    <meta
+      name="description"
+      content="Captain’s Log, Day 20 — Nothing remains visible. Yet in the void, motion cursors the unseen: HIDDEN."
+    />
+    <meta name="author" content="Marcus Lane" />
+    <link rel="stylesheet" href="../css/normalize.min.css" />
+    <link rel="stylesheet" href="../css/base.min.css" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird-weboctober.vercel.app/20-hidden/"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <link rel="octo:octothorpes" href="Hidden" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Weird Web October" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <style>
+      :root {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      body {
+        align-items: center;
+        background: #000;
+        color: #fff;
+        cursor: none;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .clue {
+        animation: fadein 1s forwards;
+        color: #fff;
+        font-size: 1.5rem;
+        opacity: 0;
+        text-align: center;
+      }
+
+      .cursor {
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.12),
+          transparent 60%
+        );
+        border-radius: 50%;
+        height: 160px;
+        mix-blend-mode: lighten;
+        pointer-events: none;
+        position: absolute;
+        width: 160px;
+      }
+
+      .fadeout .cursor,
+      .fadeout .hidden {
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      .hidden {
+        color: #000;
+        font-size: 5rem;
+        font-weight: 600;
+        left: 50%;
+        letter-spacing: 0.1em;
+        pointer-events: none;
+        position: absolute;
+        text-shadow: 0 0 0 #fff;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: text-shadow 0.2s ease;
+        user-select: none;
+      }
+
+      @keyframes fadein {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="hidden" class="hidden">HIDDEN</div>
+      <div id="cursor" class="cursor"></div>
+    </main>
+    <script>
+      const cursor = document.getElementById('cursor')
+      const hidden = document.getElementById('hidden')
+      let hoverTimer
+      let revealed = false
+
+      document.addEventListener('mousemove', event => {
+        cursor.style.left = `${event.clientX - 80}px`
+        cursor.style.top = `${event.clientY - 80}px`
+
+        if (revealed) return
+
+        clearTimeout(hoverTimer)
+
+        if (
+          Math.abs(event.clientX - window.innerWidth / 2) < 100 &&
+          Math.abs(event.clientY - window.innerHeight / 2) < 60
+        ) {
+          hoverTimer = setTimeout(() => {
+            hidden.parentElement.classList.add('fadeout')
+            setTimeout(() => {
+              hidden.outerHTML = "<div class='clue'>HIDDEN</div>"
+              revealed = true
+            }, 1000)
+          }, 800)
+        }
+      })
+    </script>
+  </body>
+</html>

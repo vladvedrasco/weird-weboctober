@@ -146,7 +146,7 @@ _[Link](https://weird-weboctober.vercel.app/19-bounce/)_
 **Day 20 — Hidden**  
 The page looks empty.  
 Only when I drag my hand across the surface do hidden words appear.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/20-hidden/)_
 
 ---
 
