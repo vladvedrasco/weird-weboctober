@@ -167,7 +167,7 @@ _[Link](https://weird-weboctober.vercel.app/22-memory/)_
 **Day 23 - Style**  
 Reality keeps changing outfits. One moment minimalist, the next loud and chaotic.  
 The substance stays the same - only the skin shifts.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/23-style/)_
 
 ---
 
